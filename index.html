@@ -663,13 +663,13 @@ body.capturing .msbar, body.capturing .journey-tip, body.capturing .journey-hint
 /* hero: headline + sentence, with "Cradle to Career at a Glance" beside them */
 .hero2 { display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(300px, 1fr); gap:28px 40px; align-items:center; }
 .hero2 .hero-why { margin-top:18px; font-size:21px; }
-.glance { background:var(--link); color:var(--white); border-radius:18px; padding:22px 24px 10px; box-shadow:0 10px 30px rgba(35,118,124,.22); position:relative; }
-.glance-t { font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#CFE7E9; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,.22); }
+.glance { background:#62B1B8; color:var(--white); border-radius:18px; padding:22px 24px 10px; box-shadow:0 10px 30px rgba(98,177,184,.22); position:relative; }   /* v6.21: teal #62B1B8 per Bianca (was var(--link) #23767C) */
+.glance-t { font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#FFFFFF; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,.22); }
 .glance-row { display:grid; grid-template-columns:auto minmax(0, 1fr); gap:6px 16px; align-items:start; padding:14px 0; }
 .glance-row + .glance-row { border-top:1px solid rgba(255,255,255,.18); }
 .gnum { font-size:30px; font-weight:900; line-height:1; font-variant-numeric:tabular-nums; min-width:116px; }
 .gnum-o { color:#FFC26B; }
-.glbl { font-size:13.5px; line-height:1.45; color:#E8F4F5; }
+.glbl { font-size:13.5px; line-height:1.45; color:#FFFFFF; }   /* v6.22: pure white per Bianca (title was #CFE7E9, labels #E8F4F5) */
 .gk { display:block; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--white); margin-bottom:3px; }
 .glance .note-star { position:static; font-size:20px; vertical-align:super; color:var(--white); }
 .glance .note-pop { top:auto; bottom:calc(100% + 6px); left:0; right:0; width:auto; font-size:12px; }
@@ -1003,6 +1003,49 @@ body.capturing .pg-foot { display:none !important; }
 h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus { outline:none; }
 h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px solid var(--link); outline-offset:4px; border-radius:4px; }
 
+
+/* v6.23: Policy Influence page (stacked 100% bars drawn in HTML; heights from the reported amounts) */
+.pol-stats { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+[aria-labelledby="how-pol"] .st-n { color:var(--orange); }   /* v6.25: logo orange #F8981C per Bianca (was #C46F00) */
+.pol-pair { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.25fr); gap:28px; align-items:start; }
+.pol-charts { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 2.2fr); gap:28px; align-items:start; }
+.pol-inc, .pol-inc2 { background:var(--panel); border-radius:14px; padding:18px 20px; }
+.pol-inc2 { margin-top:16px; }
+.pol-list { margin:10px 0 0 18px; display:grid; gap:8px; font-size:13.5px; line-height:1.5; color:var(--ink); }
+.pol-inc2 .pol-list { grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:32px; }
+.pol-list em { color:var(--sub); }
+.pchart { margin:0; min-width:0; }
+.pc-title { font-weight:800; font-size:14px; color:var(--ink); line-height:1.35; }
+.pc-leg { display:flex; gap:16px; margin-top:8px; font-size:12.5px; color:var(--sub); }
+.pc-leg i { display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+.pc-leg .ind, .pc-seg.ind { background:var(--faint); }
+.pc-leg .dir, .pc-seg.dir { background:var(--teal-chart); }
+.pc-plot { display:grid; grid-template-columns:auto minmax(0, 1fr); gap:8px; margin-top:6px; }
+.pc-axis { display:flex; flex-direction:column; justify-content:space-between; height:240px; margin-top:26px; font-size:11px; color:var(--mute); text-align:right; font-variant-numeric:tabular-nums; }
+.pc-axis span { transform:translateY(-50%); }
+.pc-axis span:last-child { transform:translateY(-50%); }
+.pc-cols { display:flex; gap:18px; justify-content:space-around; }
+.pc-col { flex:1 1 0; min-width:0; max-width:220px; display:flex; flex-direction:column; align-items:stretch; }
+.pc-tot { height:26px; font-size:13px; font-weight:800; color:var(--orange); text-align:center; white-space:nowrap; }
+.pc-stack { height:240px; display:flex; flex-direction:column-reverse; border-bottom:1px solid var(--ink); background:repeating-linear-gradient(to bottom, var(--line-soft) 0 1px, transparent 1px 25%); }
+.pc-seg { display:flex; align-items:center; justify-content:center; text-align:center; color:var(--white); font-size:12px; font-weight:600; line-height:1.3; padding:4px 6px; overflow:hidden; }
+.pc-x { margin-top:8px; font-size:12px; font-weight:700; color:var(--ink); text-align:center; line-height:1.3; }
+.pcats { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; margin-top:12px; width:100%; }   /* v6.27: Option B category cards */
+.pcat { background:var(--white); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:10px; min-width:0; }
+.pcat-h { border-bottom:2px solid var(--teal-line); padding-bottom:10px; }
+.pcat-h b { display:block; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--sub); }
+.pcat-h span { display:block; font-size:24px; font-weight:900; color:var(--orange); margin-top:4px; font-variant-numeric:tabular-nums; }
+.pcards { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.pcard { background:var(--panel); border-radius:12px; padding:12px 14px; border-left:5px solid var(--teal-chart); }
+.pcard.n { border-left-color:var(--faint); } .pcard.u { border-left-color:var(--teal); border-left-style:dashed; }
+.pcard .amt { font-size:22px; font-weight:900; font-variant-numeric:tabular-nums; color:var(--ink); }
+.pcard .who { font-weight:700; margin-top:2px; color:var(--ink); }
+.pcard .what { color:var(--sub); font-size:13px; line-height:1.45; margin-top:4px; }
+.pcard .pchip { display:inline-block; margin-top:8px; font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; border-radius:20px; padding:2px 8px; }
+.pcard .pchip.d { background:var(--teal-tint); color:#1F6F75; } .pcard .pchip.n { background:#FFFFFF; color:#4d4d4d; border:1px solid var(--line); } .pcard .pchip.u { background:#FFF1DD; color:#8A5A0B; }
+@media (max-width:900px) { .pcats { grid-template-columns:minmax(0, 1fr); } }
+@media (max-width:900px) { .pol-pair, .pol-charts { grid-template-columns:minmax(0, 1fr); } .pol-inc2 .pol-list { grid-template-columns:minmax(0, 1fr); } }
+@media (max-width:560px) { .pol-stats { grid-template-columns:minmax(0, 1fr); } .pc-cols { gap:8px; } .pc-seg { font-size:10.5px; padding:2px 3px; } .pc-tot { font-size:11px; white-space:normal; height:30px; } .pc-axis { margin-top:30px; } }
 /* v6.3: Operational Excellence and Theory of Action pages */
 .sec-n { font-weight:900; color:#C46F00; margin-right:12px; font-variant-numeric:tabular-nums; }
 .oe-stats { grid-template-columns:repeat(3, minmax(0, 1fr)); }
@@ -1070,7 +1113,7 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
          Disclosure pattern: real buttons, aria-expanded, Esc closes and returns focus, arrow keys move inside. -->
     <nav class="tabs" id="pagetabs" aria-label="Report pages">
       <button class="tab" id="tab-overview" type="button" data-action="go-overview" aria-current="page">Overview</button>
-      <div class="dd" id="dd-progress-root">
+      <div class="dd" id="dd-progress-root" data-progress>
         <button class="tab dd-btn" id="tab-progress" type="button" data-action="toggle-dd" data-dd="dd-progress" aria-expanded="false" aria-controls="dd-progress">Progress<span class="caret" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></button>
         <div class="dd-menu" id="dd-progress" hidden>
           <button class="dd-item" id="tab-table" type="button" data-action="go-table"><b>C2C progress</b><span>Progress toward 71,142 and each outcome</span></button>
@@ -1081,7 +1124,8 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
         <button class="tab dd-btn" id="tab-work" type="button" data-action="toggle-dd" data-dd="dd-work" aria-expanded="false" aria-controls="dd-work">Our work<span class="caret" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></button>
         <div class="dd-menu" id="dd-work" hidden>
           <button class="dd-item" id="tab-tc" type="button" data-action="go-tc"><b>Target Champions</b><span>Partners committed to measurable progress</span></button>
-          <button class="dd-item" id="tab-oe" type="button" data-action="go-oe"><b>Operational Excellence</b><span>Data in action, a sustainable partnership, the Colorado Collective</span></button>
+          <button class="dd-item" id="tab-pol" type="button" data-action="go-pol"><b>Policy Influence</b><span>Public funding influenced and policy and funding changes</span></button>
+          <button class="dd-item" id="tab-oe" type="button" data-action="go-oe" data-oe><b>Operational Excellence</b><span>Data in action, a sustainable partnership, the Colorado Collective</span></button>
           <button class="dd-item" id="tab-toa" type="button" data-action="go-toa" hidden><b>Theory of Action™ progress</b><span>Our progress in StriveTogether’s Theory of Action™</span></button>
         </div>
       </div>
@@ -1091,12 +1135,13 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
       <button class="pm-btn" id="pm-btn" type="button" data-action="toggle-dd" data-dd="pm-list" aria-expanded="false" aria-controls="pm-list"><span class="pm-l">Menu</span><span class="pm-cur" id="pm-cur">Overview</span><span class="caret" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></button>
       <div class="dd-menu pm-list" id="pm-list" hidden>
         <button class="dd-item" type="button" data-action="go-overview" data-pg="overview"><b>Overview</b></button>
-        <div class="dd-grp" aria-hidden="true">Progress</div>
-        <button class="dd-item sub" type="button" data-action="go-table" data-pg="table"><b>C2C progress</b></button>
-        <button class="dd-item sub" type="button" data-action="go-full" data-pg="full"><b>Full progress table</b></button>
+        <div class="dd-grp" aria-hidden="true" data-progress>Progress</div>
+        <button class="dd-item sub" type="button" data-action="go-table" data-pg="table" data-progress><b>C2C progress</b></button>
+        <button class="dd-item sub" type="button" data-action="go-full" data-pg="full" data-progress><b>Full progress table</b></button>
         <div class="dd-grp" aria-hidden="true">Our work</div>
         <button class="dd-item sub" type="button" data-action="go-tc" data-pg="tc"><b>Target Champions</b></button>
-        <button class="dd-item sub" type="button" data-action="go-oe" data-pg="oe"><b>Operational Excellence</b></button>
+        <button class="dd-item sub" type="button" data-action="go-pol" data-pg="pol"><b>Policy Influence</b></button>
+        <button class="dd-item sub" type="button" data-action="go-oe" data-pg="oe" data-oe><b>Operational Excellence</b></button>
         <button class="dd-item sub" type="button" data-action="go-toa" data-pg="toa" hidden><b>Theory of Action™ progress</b></button>
         <button class="dd-item" type="button" data-action="go-about" data-pg="about"><b>About</b></button>
       </div>
@@ -1225,6 +1270,14 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
     <a href="#tc-webinar">Hear from our Target Champions</a>
   </nav>
 
+  <nav class="sidebar nav" id="nav-pol" aria-label="Policy Influence sections" hidden>
+    <div class="nav-head"><span class="nav-title">Policy Influence</span><button class="nav-hide" type="button" data-action="toggle-nav" title="Hide the menu" aria-label="Hide the menu">‹</button></div>
+    <a href="#policy-influence">Policy Influence</a>
+    <a href="#pol-progress">Progress to date</a>
+    <a href="#pol-changes">Policy and funding changes</a>
+    <a href="#pol-funding">Public funding</a>
+  </nav>
+
   <nav class="sidebar nav" id="nav-oe" aria-label="Operational Excellence sections" hidden>
     <div class="nav-head"><span class="nav-title">Operational Excellence</span><button class="nav-hide" type="button" data-action="toggle-nav" title="Hide the menu" aria-label="Hide the menu">‹</button></div>
     <a href="#operational-excellence">Operational Excellence</a>
@@ -1291,7 +1344,7 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
           <li>Select a person in the milestone graphic, or a row in the <strong>Snapshot</strong> table, to open that milestone’s page. Each page starts with where we are now (the key number, its trend and the 2030 target), then explains what the data tells us, how we measure it, why it matters and what’s impacting it. Use <strong>Next</strong>, or the row of people at the top of each milestone page, to move between milestones.</li>
           <li>Each card’s label shows at a glance whether a result is improving, not improving, holding steady, based on older data, or has no data yet. Changes in percentages are shown in percentage points (pts).</li>
           <li>Use <strong>Search &amp; filters</strong> at the top to compare specific metrics or show only ‘Big 3’ metrics.</li>
-          <li>Select <strong>Explore the data</strong> on a card for its full chart, exact numbers, notes and source, or open the <strong>Full progress table</strong> page to see every metric in one table.</li>
+          <li>Select <strong>Explore the data</strong> on a card for its full chart, exact numbers, notes and source<span data-progress>, or open the <strong>Full progress table</strong> page to see every metric in one table</span>.</li>
           <li>Hover over (or tap) a chart, bar or asterisk (*) to see exact values and notes.</li>
         </ul>
       </details>
@@ -1371,7 +1424,7 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
       </section>
 
 
-      <div class="next-row">
+      <div class="next-row" data-progress>
         <button class="bigbtn" type="button" data-action="go-full" title="Go to the full progress table">View the full progress table →</button>
       </div>
       </div>
@@ -1678,7 +1731,73 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
 
       <div class="back-row pg-foot">
         <button class="bigbtn light" type="button" data-action="go-overview" title="Return to the Overview">← Back to overview</button>
-        <button class="bigbtn" type="button" data-action="go-oe" title="Go to the Operational Excellence page">Next: Operational Excellence →</button>
+        <button class="bigbtn" type="button" data-action="go-pol" title="Go to the Policy Influence page">Next: Policy Influence →</button>
+      </div>
+    </div>
+
+    <!-- ===================== POLICY INFLUENCE (v6.23) =====================
+         Built from the Target Champions page layout. Figures and item text come from RMP's Policy Influence graphics (Nov. 2, 2026). -->
+    <div id="page-pol" data-page="pol" hidden>
+      <section id="policy-influence" class="sec-anchor pg-hero">
+        <div class="pg-hero-l">
+          <div class="eyebrow">Policy Influence</div>
+          <h2 class="h1b">Policy Influence and Public Resource Alignment</h2>
+          <p class="pg-lede">RMP’s policy influence work includes securing new public funding, protecting existing resources, connecting underutilized funding, and repurposing or realigning resources to advance cradle-to-career outcomes.<span class="draft" title="Starter wording, still being refined">Draft</span></p>
+        </div>
+        <aside class="how" aria-labelledby="how-pol">
+          <div class="how-t" id="how-pol">How we influence public resources</div>
+          <ol class="steps" role="list">
+            <li><span class="st-n" aria-hidden="true">01</span><span class="st-b"><b>Secure new public funding</b><span>New public dollars brought into the region.</span></span></li>
+            <li><span class="st-n" aria-hidden="true">02</span><span class="st-b"><b>Protect existing resources</b><span>Keep funding already in place for young people.</span></span></li>
+            <li><span class="st-n" aria-hidden="true">03</span><span class="st-b"><b>Connect underutilized funding</b><span>Link existing dollars to the people and programs that need them.</span></span></li>
+            <li><span class="st-n" aria-hidden="true">04</span><span class="st-b"><b>Repurpose or realign resources</b><span>Redirect resources for greater impact.</span></span></li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="pol-progress" class="sec-anchor stack" style="margin-top:44px">
+        <div class="h2row">
+          <h2 class="h2">Progress to date</h2>
+          <button class="linkbtn" type="button" data-action="copy-anchor" data-anchor="pol-progress" title="Copy a link to this section"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><span>Link</span></button>
+        </div>
+        <div class="stat-grid pol-stats">
+          <div class="stat" style="--c:var(--teal);--n:var(--teal-ink)"><div class="num">$2.041 billion</div><div class="cap">in estimated public funding influence</div></div>
+          <div class="stat" style="--c:var(--orange)"><div class="num">12</div><div class="cap">policy and funding changes</div></div>
+        </div>
+      </section>
+
+      <section id="pol-changes" class="sec-anchor stack" style="margin-top:44px">
+        <div class="h2row">
+          <h2 class="h2">Estimated policy influence: policy and funding changes</h2>
+          <button class="linkbtn" type="button" data-action="copy-anchor" data-anchor="pol-changes" title="Copy a link to this section"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><span>Link</span></button>
+        </div>
+        <p class="body-p pad-x">Across the network, partners are influencing systems through policy and funding changes in order to improve cradle to career outcomes and the indicators that most impact them. <a href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/POLICY-%26-CIVIC-LEADERSHIP" target="_blank" rel="noopener" title="Opens in a new tab: the current scorecard’s Policy &amp; Civic Leadership page">Learn more here</a></p>
+        <div class="card-box pdf-block pol-pair">
+          <figure class="pchart" role="img" aria-label="Stacked bar: 12 policy and funding changes in total, 8 direct and 4 indirect."><figcaption class="pc-title">Estimated influence on policy and funding changes</figcaption><div class="pc-leg" aria-hidden="true"><span><i class="ind"></i>Indirect</span><span><i class="dir"></i>Direct</span></div><div class="pc-plot"><div class="pc-axis" aria-hidden="true"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="pc-cols"><div class="pc-col"><div class="pc-tot">Total: 12 policy/funding changes</div><div class="pc-stack"><div class="pc-seg dir" style="height:66.67%"><span>Direct: 8 policy/funding changes</span></div><div class="pc-seg ind" style="height:33.33%"><span>Indirect: 4 policy/funding changes</span></div></div><div class="pc-x">Total policy / funding changes</div></div></div></div></figure>
+          <div class="pol-inc"><div class="box-title">What does this include?</div><ul class="pol-list"><li><b>CASA of Adams &amp; Broomfield Counties</b> expanded its organizational vision and mission and scope of its operations to serve young people outside of the dependency and neglect system <em>(direct)</em></li><li>Civic Influencers testified in support of <b>HB25-1038: Postsecondary Credit Transfer Website</b> <em>(indirect)</em></li><li>Civic Influencers testified in support of <b>SB24-164: Institution of Higher Education Transparency Requirements</b> <em>(indirect)</em></li><li><b>27J Schools</b> passed a Mill Levy Override in 2022, bringing $17.7M in additional funding annually into the district <em>(direct)</em></li><li><b>Adams 12 Five Star Schools</b> passed a Mill Levy Override in 2025, bringing $39.42 M in additional funding annually into the district <em>(direct)</em></li><li><b>Adams 12 Five Star Schools</b> passed a Bond in 2024, bringing $830M in additional funding into the district <em>(direct)</em></li><li><b>Westminster Public Schools</b> passed a Bond in 2024, bringing $111M in additional funding into the district <em>(direct)</em></li><li><b>Aurora Public Schools</b> passed two ballot measures in 2024, a Capital Mill Levy bringing an additional $30M into the district annually, and a Bond bringing $1B in additional funding into the district <em>(indirect)</em></li><li>The <b>Adams County Opioid Abatement Council</b> has strategically distributed ~$12.02M in opioid litigation settlement dollars to abate the opioid epidemic</li><li>The <b>City of Commerce City</b> has allocated $500k in American Rescue Plan Act (ARPA) dollars, providing free short-term credential and certificate programs in high-demand fields as well as no-cost GED courses to residents</li><li><b>Adams County Government</b> distributed $4.638M in ARPA dollars to support survivors of domestic violence <em>(indirect)</em></li><li><b>Adams County Education Consortium and the Colorado Opportunity Scholarship Initiative</b> repurposed ~$50K unused scholarship dollars in Adams County to address unmet financial need of learners at Front Range Community College <em>(direct)</em></li></ul></div>
+        </div>
+      </section>
+
+      <section id="pol-funding" class="sec-anchor stack" style="margin-top:44px">
+        <div class="h2row">
+          <h2 class="h2">Estimated policy influence: public funding</h2>
+          <button class="linkbtn" type="button" data-action="copy-anchor" data-anchor="pol-funding" title="Copy a link to this section"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><span>Link</span></button>
+        </div>
+        <p class="body-p pad-x">Across the network, partners are securing new dollars, protecting existing ones, connecting existing funds, and realigning resources for greater impact.</p>
+        <div class="card-box pdf-block pol-charts">
+          <figure class="pchart" role="img" aria-label="Stacked bar: $2.041 billion in total, about $1.01 billion direct and about $1.03 billion indirect."><figcaption class="pc-title">Estimated influence on public funding (indirect v direct)</figcaption><div class="pc-leg" aria-hidden="true"><span><i class="ind"></i>Indirect</span><span><i class="dir"></i>Direct</span></div><div class="pc-plot"><div class="pc-axis" aria-hidden="true"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="pc-cols"><div class="pc-col"><div class="pc-tot">Total: $2.041 billion</div><div class="pc-stack"><div class="pc-seg dir" style="height:49.31%"><span>Direct: ~$1.01 billion</span></div><div class="pc-seg ind" style="height:50.69%"><span>Indirect: ~$1.03 billion</span></div></div><div class="pc-x">Total</div></div></div></div></figure>
+          <figure class="pchart wide" role="img" aria-label="Stacked bars by category. New public dollars secured: about $2.02 billion, $994.1 million direct and $1.03 billion indirect. Existing resources connected: about $17.16 million, $12.52 million direct and $4.64 million indirect. Resources repurposed or realigned: about $50 thousand, all direct."><figcaption class="pc-title">Estimated influence on public funding (by category of influence)</figcaption><div class="pc-leg" aria-hidden="true"><span><i class="ind"></i>Indirect</span><span><i class="dir"></i>Direct</span></div><div class="pc-plot"><div class="pc-axis" aria-hidden="true"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="pc-cols"><div class="pc-col"><div class="pc-tot">Total: ~$2.02 billion</div><div class="pc-stack"><div class="pc-seg dir" style="height:49.11%"><span>Direct: ~$994.1 million</span></div><div class="pc-seg ind" style="height:50.89%"><span>Indirect: ~$1.03 billion</span></div></div><div class="pc-x">New public dollars secured</div></div><div class="pc-col"><div class="pc-tot">Total: ~$17.16 million</div><div class="pc-stack"><div class="pc-seg dir" style="height:72.97%"><span>Direct: ~$12.52 million</span></div><div class="pc-seg ind" style="height:27.03%"><span>Indirect: ~$4.64 million</span></div></div><div class="pc-x">Existing resources connected</div></div><div class="pc-col"><div class="pc-tot">Total: ~$50k</div><div class="pc-stack"><div class="pc-seg dir" style="height:100.00%"><span>Direct: ~$50k</span></div></div><div class="pc-x">Resources repurposed or realigned</div></div></div></div></figure>
+        </div>
+        <div class="card-box pdf-block pol-inc2">
+          <div class="box-title">What does this include?</div>
+          <div class="pcats"><div class="pcat"><div class="pcat-h"><b>New public dollars secured</b><span>~$2.02 billion</span></div><ul class="pcards" role="list"><li class="pcard n"><div class="amt">~$1.03B</div><div class="who">Aurora Public Schools</div><div class="what">thanks to the passage of the 2024 Capital Mill Levy and Bond</div><span class="pchip n">Indirect</span></li><li class="pcard d"><div class="amt">~$830M</div><div class="who">Adams 12 Five Star Schools</div><div class="what">thanks to the passage of the 2024 Bond</div><span class="pchip d">Direct</span></li><li class="pcard d"><div class="amt">~$111M</div><div class="who">Westminster Public Schools</div><div class="what">thanks to the passage of the 2024 Bond</div><span class="pchip d">Direct</span></li><li class="pcard d"><div class="amt">~$53.1M</div><div class="who">27J Schools</div><div class="what">thanks to the passage of the 2022 Mill Levy Override</div><span class="pchip d">Direct</span></li></ul></div><div class="pcat"><div class="pcat-h"><b>Existing resources connected</b><span>~$17.16 million</span></div><ul class="pcards" role="list"><li class="pcard d"><div class="amt">~$12.02M</div><div class="who">Adams County Opioid Abatement Council</div><div class="what">in opioid litigation settlement dollars distributed</div><span class="pchip d">Direct</span></li><li class="pcard n"><div class="amt">~$4.638M</div><div class="who">Adams County Government</div><div class="what">in American Rescue Plan Act (ARPA) dollars distributed</div><span class="pchip n">Indirect</span></li><li class="pcard u"><div class="amt">~$500K</div><div class="who">City of Commerce City</div><div class="what">in American Rescue Plan Act (ARPA) dollars allocated for the Commerce City Workforce Pathway Program</div><span class="pchip u">Not yet tagged</span></li></ul></div><div class="pcat"><div class="pcat-h"><b>Resources repurposed or realigned</b><span>~$50k</span></div><ul class="pcards" role="list"><li class="pcard d"><div class="amt">~$50K</div><div class="who">Colorado Opportunity Scholarship Initiative (COSI)</div><div class="what">in unused Colorado Opportunity Scholarship Initiative (COSI) in Adams County reallocated to address unmet financial need of learners at Front Range Community College</div><span class="pchip d">Direct</span></li></ul></div></div>
+        </div>
+      </section>
+
+      <div class="back-row pg-foot">
+        <button class="bigbtn light" type="button" data-action="go-tc" title="Go to the Target Champions page">← Target Champions</button>
+        <button class="bigbtn" type="button" data-action="go-oe" title="Go to the Operational Excellence page" data-oe>Next: Operational Excellence →</button>
+        <button class="bigbtn" type="button" data-action="go-about" title="Go to the About page" data-oe-alt hidden>Next: About →</button>
       </div>
     </div>
 
@@ -1800,11 +1919,11 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
         </div>
         <p class="body-p pad-x">This Scorecard includes data around the following. Each item shows where you can find it today.</p>
         <ol class="tracks" role="list">
-          <li><span class="v-num" aria-hidden="true">01</span><div><p><b>Regional trends</b> over time, from baseline to today’s numbers, so we can understand progress the RMP network is making towards its 71K goal</p><p class="where"><span class="wtag here">In this scorecard</span><button class="wlink" type="button" data-action="go-table">C2C progress</button> and <a class="wlink" href="#since-2023">progress since 2023</a></p></div></li>
+          <li><span class="v-num" aria-hidden="true">01</span><div><p><b>Regional trends</b> over time, from baseline to today’s numbers, so we can understand progress the RMP network is making towards its 71K goal</p><p class="where"><span class="wtag here">In this scorecard</span><span data-progress><button class="wlink" type="button" data-action="go-table">C2C progress</button> and </span><a class="wlink" href="#since-2023">progress since 2023</a></p></div></li>
           <li><span class="v-num" aria-hidden="true">02</span><div><p><b>Demographics</b> of the RMP region, including by county, municipality, school district, and Congressional District to provide additional context around the data</p><p class="where"><span class="wtag">On the current scorecard</span><a class="wlink" href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/DEMOGRAPHICS" target="_blank" rel="noopener">Demographics ↗</a></p></div></li>
           <li><span class="v-num" aria-hidden="true">03</span><div><p><b>Cradle to Career milestones,</b> from kindergarten readiness to employment at a good wage</p><p class="where"><span class="wtag here">In this scorecard</span><a class="wlink" href="#snapshot">Snapshot of the seven shared milestones and RMP’s regional addition</a></p></div></li>
           <li><span class="v-num" aria-hidden="true">04</span><div><p><b>Key indicators</b> that influence whether young people reach those milestones</p><p class="where"><span class="wtag soon">Coming soon</span>Each milestone page lists what’s impacting it; indicator data is being added.</p></div></li>
-          <li><span class="v-num" aria-hidden="true">05</span><div><p><b>Progress and impact of RMP’s collective efforts,</b> including regional Target Champions, Big Bets, Policy and Civic Leadership, and Operational Excellence</p><p class="where"><span class="wtag here">In this scorecard</span><button class="wlink" type="button" data-action="go-tc">Target Champions</button> <button class="wlink" type="button" data-action="go-oe">Operational Excellence</button><span class="wtag">On the current scorecard</span><a class="wlink" href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/BIG-BETS" target="_blank" rel="noopener">Big Bets ↗</a> <a class="wlink" href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/POLICY-%26-CIVIC-LEADERSHIP" target="_blank" rel="noopener">Policy and Civic Leadership ↗</a></p></div></li>
+          <li><span class="v-num" aria-hidden="true">05</span><div><p><b>Progress and impact of RMP’s collective efforts,</b> including regional Target Champions, Big Bets, Policy and Civic Leadership, and Operational Excellence</p><p class="where"><span class="wtag here">In this scorecard</span><button class="wlink" type="button" data-action="go-tc">Target Champions</button> <button class="wlink" type="button" data-action="go-oe" data-oe>Operational Excellence</button><span class="wtag">On the current scorecard</span><a class="wlink" href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/BIG-BETS" target="_blank" rel="noopener">Big Bets ↗</a> <a class="wlink" href="https://experience.arcgis.com/experience/19c563fe09124c73a8bf3d8b67043146/page/POLICY-%26-CIVIC-LEADERSHIP" target="_blank" rel="noopener">Policy and Civic Leadership ↗</a></p></div></li>
           <!-- v6.6: hidden (kept as an asset) until there is Theory of Action™ progress to show; remove hidden to bring it back -->
           <li id="about-toa" hidden><span class="v-num" aria-hidden="true">06</span><div><p><b>Progress the RMP network is making in StriveTogether’s Theory of Action™</b>, which tells how well this community is transforming systems to better serve young people</p><p class="where"><span class="wtag here">In this scorecard</span><button class="wlink" type="button" data-action="go-toa">Theory of Action™ progress</button></p></div></li>
         </ol>
@@ -1876,7 +1995,8 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible { outline:2px s
 
       <div class="back-row pg-foot">
         <button class="bigbtn light" type="button" data-action="go-overview" title="Return to the Overview">← Back to overview</button>
-        <button class="bigbtn light" type="button" data-action="go-oe" title="Go to the Operational Excellence page">← Operational Excellence</button>
+        <button class="bigbtn light" type="button" data-action="go-oe" title="Go to the Operational Excellence page" data-oe>← Operational Excellence</button>
+        <button class="bigbtn light" type="button" data-action="go-pol" title="Go to the Policy Influence page" data-oe-alt hidden>← Policy Influence</button>
       </div>
     </div>
 
@@ -2277,10 +2397,14 @@ function targets() {
 function seriesAttrs() { return ' show-current="' + S.showCurrent + '" show-forecast="' + S.showForecast + '" show-goal="' + S.showGoal + '"'; }
 
 /* ------------------------------------------------------------------ render */
-var PAGES = ['overview', 'table', 'full', 'tc', 'oe', 'toa', 'about'];
-var PAGE_NAME = { overview:'Overview', table:'C2C progress', full:'Full progress table', tc:'Target Champions', oe:'Operational Excellence', toa:'Theory of Action™ progress', about:'About' };
-var WORK_PAGES = ['tc', 'oe', 'toa'];   // v6.3: the "Our work" group
-var SHOW_TOA = false;   // v6.6: the Theory of Action™ progress page stays in the source but is hidden (menus, page-end buttons, About, PDF) until its progress data is ready
+var PAGES = ['overview', 'table', 'full', 'tc', 'pol', 'oe', 'toa', 'about'];
+var PAGE_NAME = { overview:'Overview', table:'C2C progress', full:'Full progress table', tc:'Target Champions', pol:'Policy Influence', oe:'Operational Excellence', toa:'Theory of Action™ progress', about:'About' };
+var WORK_PAGES = ['tc', 'pol', 'oe', 'toa'];   // v6.3: the "Our work" group
+var SHOW_PROGRESS = false;   // v6.19: the Progress tab (C2C progress, Full progress table) stays in the source but is hidden (menus, links, About, PDF) until Bianca asks to unhide it; set to true to restore
+var SHOW_OE = false;   // v6.20: the Operational Excellence page stays in the source but is hidden (menus, page-end buttons, About, PDF) until Bianca asks to unhide it; set to true to restore
+if (!SHOW_OE) { document.querySelectorAll('[data-oe]').forEach(function (el) { el.hidden = true; }); document.querySelectorAll('[data-oe-alt]').forEach(function (el) { el.hidden = false; }); }
+var SHOW_TOA = false;
+if (!SHOW_PROGRESS) document.querySelectorAll('[data-progress]').forEach(function (el) { el.hidden = true; });   // v6.6: the Theory of Action™ progress page stays in the source but is hidden (menus, page-end buttons, About, PDF) until its progress data is ready
 function renderChrome() {
   // v6: five pages. Header: Overview · Progress ▾ (C2C progress, Full progress table) · Target Champions · About
   PAGES.forEach(function (p) {
@@ -2338,6 +2462,7 @@ function renderChrome() {
   $('nav-table').hidden = S.navCollapsed || S.page !== 'table';
   $('nav-full').hidden = S.navCollapsed || S.page !== 'full';
   $('nav-tc').hidden = S.navCollapsed || S.page !== 'tc';
+  $('nav-pol').hidden = S.navCollapsed || S.page !== 'pol';
   $('nav-oe').hidden = S.navCollapsed || S.page !== 'oe';
   $('nav-toa').hidden = S.navCollapsed || S.page !== 'toa';
   $('nav-about').hidden = S.navCollapsed || S.page !== 'about';
@@ -2780,7 +2905,7 @@ function renderCards() {
       '<h2 class="ch-name" id="h-' + c.id + '">' + esc(c.name) + '</h2><div class="ch-rule"></div></div></div>' +
       '<div class="ch-meta"><span class="cat-upd">Last updated ' + esc(c.updated) + '</span>' +
       '<button class="linkbtn" type="button" data-action="copy-anchor" data-anchor="' + c.id + '" title="Copy a link to this milestone">' + ICON.link + '<span>Link</span></button>' +
-      '<button class="intable" type="button" data-action="jump-table" data-cat="' + c.id + '" title="View this milestone in the full progress table">In table →</button></div>' +
+      (SHOW_PROGRESS ? '<button class="intable" type="button" data-action="jump-table" data-cat="' + c.id + '" title="View this milestone in the full progress table">In table →</button>' : '') + '</div>' +
       (k ? '<p class="ch-headline">' + esc(k.headline) + draftTag(k.draft) + '</p>' : '') +
       '<h3 class="sec-k where">Where we are now</h3>' +
       (c.ids.some(function (id) { return M[id].big3; }) ? '<p class="big3note"><img src="' + BIG3_SRC + '" alt="Big 3 symbol" width="30" height="30">Metrics marked with this symbol are aligned to the ‘Big 3’.</p>' : '') +
@@ -2914,6 +3039,7 @@ function setHash(id) {
 function readHash() { return (location.hash || '').replace('#', ''); }
 function pageForHash(hash) {
   if (/^(target-champions|tc-)/.test(hash)) return 'tc';
+  if (/^(policy-influence|pol-)/.test(hash)) return 'pol';
   if (/^(operational-excellence|oe-)/.test(hash)) return 'oe';
   if (/^(theory-of-action|toa-)/.test(hash)) return 'toa';
   if (/^about(-|$)/.test(hash)) return 'about';
@@ -2925,6 +3051,8 @@ function setPage(p) { if (S.page !== p) { S.page = p; S.resultIdx = -1; } render
 function gotoHash(hash, delay, smooth) {
   if (!hash) return;
   if (!SHOW_TOA && /^(theory-of-action|toa-)/.test(hash)) { hash = 'overview'; setHash(hash); }   // v6.6: hidden page
+  if (!SHOW_PROGRESS && /^(full-progress-table|progress-table|ttbl-|trow-|c2c-progress|table$|outcomes-progression|goal-snapshot)/.test(hash)) { hash = 'overview'; setHash(hash); }   // v6.19: hidden pages
+  if (!SHOW_OE && /^(operational-excellence|oe-)/.test(hash)) { hash = 'overview'; setHash(hash); }   // v6.20: hidden page
   var legacy = /^(ttbl-)?(g[1-5])$/.exec(hash);
   if (legacy) hash = (legacy[1] || '') + LEGACY_IDS[legacy[2]];
   var pg = pageForHash(hash), ms = null;
@@ -2936,17 +3064,17 @@ function gotoHash(hash, delay, smooth) {
   setPage(pg);
   setTimeout(function () {
     if (ms && hash === ms) { window.scrollTo({ top: 0 }); return; }
-    if (hash === 'table' || hash === 'c2c-progress' || hash === 'overview' || hash === 'full-progress-table' || hash === 'progress-table' || hash === 'target-champions' || hash === 'operational-excellence' || hash === 'theory-of-action' || hash === 'about') { window.scrollTo({ top: 0 }); return; }
+    if (hash === 'table' || hash === 'c2c-progress' || hash === 'overview' || hash === 'full-progress-table' || hash === 'progress-table' || hash === 'target-champions' || hash === 'policy-influence' || hash === 'operational-excellence' || hash === 'theory-of-action' || hash === 'about') { window.scrollTo({ top: 0 }); return; }
     var el = $(hash === 'progress-table' ? 'full-progress-table' : hash);
     if (el && el.tagName === 'DETAILS') el.open = true;   // e.g. #howto opens "How to use this scorecard"
     scrollToEl(el, smooth);
   }, delay || 0);
 }
-var PAGE_HASH = { overview:'overview', table:'c2c-progress', full:'full-progress-table', tc:'target-champions', oe:'operational-excellence', toa:'theory-of-action', about:'about' };
-function goPage(p) { if (p === 'toa' && !SHOW_TOA) p = 'overview'; if (p === 'overview') S.ms = null; S.dd = null; setPage(p); setHash(PAGE_HASH[p]); window.scrollTo({ top: 0 }); }
+var PAGE_HASH = { overview:'overview', table:'c2c-progress', full:'full-progress-table', tc:'target-champions', pol:'policy-influence', oe:'operational-excellence', toa:'theory-of-action', about:'about' };
+function goPage(p) { if (p === 'toa' && !SHOW_TOA) p = 'overview'; if ((p === 'table' || p === 'full') && !SHOW_PROGRESS) p = 'overview'; if (p === 'oe' && !SHOW_OE) p = 'overview'; if (p === 'overview') S.ms = null; S.dd = null; setPage(p); setHash(PAGE_HASH[p]); window.scrollTo({ top: 0 }); }
 
 // v6: after choosing a page from a menu, put keyboard focus on that page's main heading (not on the closed menu)
-var PAGE_HEAD = { overview:'#ov-home h1', table:'#goal-snapshot h2', full:'#full-progress-table h2', tc:'#target-champions h2', oe:'#operational-excellence h2', toa:'#theory-of-action h2', about:'#about h2' };
+var PAGE_HEAD = { overview:'#ov-home h1', table:'#goal-snapshot h2', full:'#full-progress-table h2', tc:'#target-champions h2', pol:'#policy-influence h2', oe:'#operational-excellence h2', toa:'#theory-of-action h2', about:'#about h2' };
 function focusPageHeading() {
   var h = document.querySelector(PAGE_HEAD[S.page]);
   if (!h) return;
@@ -3216,8 +3344,8 @@ function exportPdf() {
   var prevMs = S.ms, listsOpen = null;
   function restoreLists() { if (listsOpen) document.querySelectorAll('details.listacc').forEach(function (d, i) { d.open = listsOpen[i]; }); listsOpen = null; }
   var pages = [['overview', 'Overview', null]].concat(CATS.map(function (c) { return ['overview', 'Milestone ' + c.num + ' · ' + c.name, c.id]; }))
-    .concat([['table', 'C2C progress', null], ['full', 'Full progress table', null], ['tc', 'Target Champions', null], ['oe', 'Operational Excellence', null], ['toa', 'Theory of Action progress', null], ['about', 'About', null]])
-    .filter(function (p) { return SHOW_TOA || p[0] !== 'toa'; });
+    .concat([['table', 'C2C progress', null], ['full', 'Full progress table', null], ['tc', 'Target Champions', null], ['pol', 'Policy Influence', null], ['oe', 'Operational Excellence', null], ['toa', 'Theory of Action progress', null], ['about', 'About', null]])
+    .filter(function (p) { return (SHOW_TOA || p[0] !== 'toa') && (SHOW_PROGRESS || (p[0] !== 'table' && p[0] !== 'full')) && (SHOW_OE || p[0] !== 'oe'); });
   var pdf, pageW = 612, pageH = 792, margin = 36, innerW = pageW - margin * 2, innerH = pageH - margin * 2 - 14, pageNo = 0;
   return Promise.all([loadScript(CDN.h2i, 'htmlToImage'), loadScript(CDN.jspdf, 'jspdf')]).then(function () {
     pdf = new window.jspdf.jsPDF({ unit: 'pt', format: 'letter', orientation: 'portrait', compress: true });
@@ -3352,6 +3480,7 @@ document.addEventListener('click', function (e) {
     case 'go-table': goPage('table'); break;
     case 'go-full': goPage('full'); break;
     case 'go-tc': goPage('tc'); break;
+    case 'go-pol': goPage('pol'); break;
     case 'go-oe': goPage('oe'); break;
     case 'go-toa': goPage('toa'); break;
     case 'go-about': goPage('about'); break;
@@ -3384,6 +3513,7 @@ document.addEventListener('click', function (e) {
       break;
     case 'copy-anchor': copyAnchor(t.getAttribute('data-anchor')); break;
     case 'jump-table':
+      if (!SHOW_PROGRESS) break;
       var cat = t.getAttribute('data-cat'); setPage('full'); setHash('ttbl-' + cat);
       setTimeout(function () { scrollToEl($('ttbl-' + cat), true); }, 60); break;
     case 'jump-cards':
@@ -3569,5 +3699,6 @@ getDownloads().then(function (dl) { if (dl === null) $('pdf-item').hidden = true
 })();
 
 </script>
+
 
 </body></html>
